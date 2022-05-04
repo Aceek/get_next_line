@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 14:56:12 by ilinhard          #+#    #+#             */
-/*   Updated: 2022/05/04 17:44:47 by ilinhard         ###   ########.fr       */
+/*   Updated: 2022/05/04 19:35:18 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,5 @@ char	*get_next_line(int fd);
 int		ft_strlen(char *str);
 int		ft_strchr(char *str, char to_find);
 char	*ft_strjoin(char *s1, char *s2);
-
-# define BUFFER_SIZE 100
 
 #endif

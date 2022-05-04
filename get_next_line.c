@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 15:53:46 by ilinhard          #+#    #+#             */
-/*   Updated: 2022/05/04 19:32:06 by ilinhard         ###   ########.fr       */
+/*   Updated: 2022/05/04 19:50:37 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,8 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	save = ft_add_buff(fd, save);
+	if (!save)
+		return (NULL);
 	line = ft_get_line(save);
 	save = ft_clear(save);
 	return (line);
