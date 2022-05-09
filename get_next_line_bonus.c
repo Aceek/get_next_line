@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 15:53:46 by ilinhard          #+#    #+#             */
-/*   Updated: 2022/05/04 20:48:12 by ilinhard         ###   ########.fr       */
+/*   Updated: 2022/05/09 16:54:52 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,15 +95,15 @@ char	*ft_clear(char *str)
 
 char	*get_next_line(int fd)
 {
-	static char	*save;
+	static char	*save[257];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 256)
 		return (NULL);
-	save = ft_add_buff(fd, save);
-	if (!save)
+	save[fd] = ft_add_buff(fd, save[fd]);
+	if (!save[fd])
 		return (NULL);
-	line = ft_get_line(save);
-	save = ft_clear(save);
+	line = ft_get_line(save[fd]);
+	save[fd] = ft_clear(save[fd]);
 	return (line);
 }
