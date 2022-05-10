@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 15:53:46 by ilinhard          #+#    #+#             */
-/*   Updated: 2022/05/04 20:48:12 by ilinhard         ###   ########.fr       */
+/*   Updated: 2022/05/11 01:36:47 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ char	*ft_clear(char *str)
 	}
 	new = malloc(sizeof(char) * (ft_strlen(str) - i + 1));
 	if (!new)
-		return (NULL);
+		return (free(str), NULL);
 	i++;
 	j = 0;
 	while (str[i + j])
