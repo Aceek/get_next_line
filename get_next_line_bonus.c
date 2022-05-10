@@ -6,11 +6,11 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 15:53:46 by ilinhard          #+#    #+#             */
-/*   Updated: 2022/05/09 16:54:52 by ilinhard         ###   ########.fr       */
+/*   Updated: 2022/05/11 01:23:00 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_add_buff(int fd, char *save)
 {
@@ -95,10 +95,10 @@ char	*ft_clear(char *str)
 
 char	*get_next_line(int fd)
 {
-	static char	*save[257];
+	static char	*save[1024];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 256)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 1023)
 		return (NULL);
 	save[fd] = ft_add_buff(fd, save[fd]);
 	if (!save[fd])

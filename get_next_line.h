@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 14:56:12 by ilinhard          #+#    #+#             */
-/*   Updated: 2022/05/04 19:35:18 by ilinhard         ###   ########.fr       */
+/*   Updated: 2022/05/11 01:28:43 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@
 # include <fcntl.h>
 # include <unistd.h>
 # include <stdlib.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 5
+# endif
 
 char	*ft_add_buff(int fd, char *save);
 char	*ft_get_line(char *str);
